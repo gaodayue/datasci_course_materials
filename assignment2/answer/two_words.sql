@@ -1,0 +1,12 @@
+SELECT count(1)
+FROM (
+    SELECT docid
+    FROM Frequency
+    WHERE term='transactions'
+) x
+JOIN (
+    SELECT docid
+    FROM Frequency
+    WHERE term='world'
+) y
+ON x.docid=y.docid;
